@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "TestPage";
+}
+
+<h1>Test Page</h1>
+
+<p> The current time @(DateTime.Now.ToLongTimeString()) </p>
+
+<form action="/Home/TestPage" method="get">
+    <label for="item">Item;</label>
+    <input id="item" type="text" name="item" value="" />
+    <input type="submit" value="Submit" />
+</form>
+
+@* This is a C# Razor comment*@
+@if (ViewBag.Items.Count > 0)
+{
+<ul>
+    @foreach (string item in ViewBag.Items)
+    {
+    <li>@(item)</li>
+    }
+</ul>
+}
